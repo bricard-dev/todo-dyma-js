@@ -5,12 +5,12 @@ const form = document.querySelector("form");
 const input = document.querySelector("form > input");
 const todos = [
   {
-    text: "je suis une todo",
+    text: "Je suis une todo",
     done: false,
-    editMode: true,
+    editMode: false,
   },
   {
-    text: "faire du javascript",
+    text: "Faire du javascript",
     done: true,
     editMode: false,
   },
@@ -56,8 +56,16 @@ const createTodoElement = (todo, index) => {
   <p ${todo.done ? "class=done" : ""}>${todo.text}</p>
   `;
   li.append(buttonEdit, buttonDelete);
+  let timer;
   li.addEventListener("click", (event) => {
-    toggleTodo(index);
+    if (event.detail === 1) {
+      timer = setTimeout(() => {
+        toggleTodo(index);
+      }, 200);
+    } else if (event.detail > 1) {
+      clearTimeout(timer);
+      toggleEditMode(index);
+    }
   });
   return li;
 };
