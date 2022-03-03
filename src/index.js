@@ -67,6 +67,11 @@ const createTodoEditElement = (todo, index) => {
   const input = document.createElement("input");
   input.type = "text";
   input.value = todo.text;
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      editTodo(index, input);
+    }
+  });
   const buttonSave = document.createElement("button");
   buttonSave.classList.add("success");
   buttonSave.innerHTML = "Save";
