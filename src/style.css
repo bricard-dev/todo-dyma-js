@@ -36,6 +36,21 @@ button {
   margin: 0 3px;
 }
 
+button.danger {
+  background: #eb2f06;
+  color: white;
+}
+
+button.primary {
+  background: #4a69bd;
+  color: white;
+}
+
+button.success {
+  background: #2ed573;
+  color: white;
+}
+
 input {
   padding: 8px 15px;
   outline: 0;

@@ -38,12 +38,14 @@ const displayTodo = () => {
 const createTodoElement = (todo, index) => {
   const li = document.createElement("li");
   const buttonDelete = document.createElement("button");
+  buttonDelete.classList.add("danger");
   buttonDelete.innerText = "Supprimer";
   buttonDelete.addEventListener("click", (event) => {
     event.stopPropagation();
     deleteTodo(index);
   });
   const buttonEdit = document.createElement("button");
+  buttonEdit.classList.add("primary");
   buttonEdit.innerHTML = "Edit";
   buttonEdit.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -66,6 +68,7 @@ const createTodoEditElement = (todo, index) => {
   input.type = "text";
   input.value = todo.text;
   const buttonSave = document.createElement("button");
+  buttonSave.classList.add("success");
   buttonSave.innerHTML = "Save";
   buttonSave.addEventListener("click", (event) => {
     event.stopPropagation();
