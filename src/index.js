@@ -84,11 +84,14 @@ const createTodoEditElement = (todo, index) => {
 };
 
 const addTodo = (text) => {
-  todos.push({
-    text,
-    done: false,
-  });
-  displayTodo();
+  text = text.trim();
+  if (text) {
+    todos.push({
+      text,
+      done: false,
+    });
+    displayTodo();
+  }
 };
 
 const deleteTodo = (index) => {
