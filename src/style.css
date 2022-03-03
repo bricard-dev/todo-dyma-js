@@ -67,6 +67,10 @@ li p {
   flex: 1;
 }
 
+li p.done {
+  text-decoration: line-through;
+}
+
 li .todo {
   flex: 0 0 20px;
   height: 20px;

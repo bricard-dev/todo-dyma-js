@@ -51,7 +51,7 @@ const createTodoElement = (todo, index) => {
   });
   li.innerHTML = `
   <span class="todo ${todo.done ? "done" : ""}"></span>
-  <p>${todo.text}</p>
+  <p ${todo.done ? "class=done" : ""}>${todo.text}</p>
   `;
   li.append(buttonEdit, buttonDelete);
   li.addEventListener("click", (event) => {
